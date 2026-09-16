@@ -1,0 +1,52 @@
+<!DOCTYPE html> <!-- Define o tipo de documento como HTML5 para o navegador -->
+<html lang="pt-BR"> <!-- Inicia o documento HTML e define o idioma principal como Português do Brasil -->
+<head> <!-- Abre o cabeçalho, onde ficam metadados, título e links de estilo -->
+    <meta charset="UTF-8"> <!-- Define o padrão de codificação de caracteres como UTF-8 (suporta acentos e ç) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna a página responsiva para celulares e computadores -->
+    <title>Cardápio Digital</title> <!-- Define o título que aparece na aba do navegador -->
+    <link rel="stylesheet" href="style.css"> <!-- Conecta o arquivo de estilos CSS externo à página -->
+</head> <!-- Fecha o cabeçalho -->
+<body> <!-- Abre o corpo da página, onde fica todo o conteúdo visível -->
+    <header> <!-- Seção de cabeçalho visual da página -->
+        <h1>Nosso Cardápio</h1> <!-- Título principal exibido no topo -->
+        <p>Cadastre novos pratos e gerencie seu menu digital.</p> <!-- Subtítulo explicativo -->
+    </header> <!-- Fecha o cabeçalho visual -->
+
+    <main> <!-- Inicia o conteúdo principal da página -->
+        <!-- Formulário para o dono cadastrar novos produtos -->
+        <section class="form-section"> <!-- Seção que agrupa e isola o formulário de cadastro -->
+            <h2>Cadastrar Novo Prato</h2> <!-- Título da seção do formulário -->
+            <form id="product-form"> <!-- Inicia o formulário HTML com um ID para manipulação via JavaScript/TypeScript -->
+                <div class="form-group"> <!-- Agrupa o rótulo e o campo de entrada do nome -->
+                    <label for="nome">Nome do Produto</label> <!-- Rótulo descritivo associado ao input pelo ID 'nome' -->
+                    <input type="text" id="nome" required placeholder="Ex: Batata Frita"> <!-- Campo de texto obrigatório para digitar o nome -->
+                </div> <!-- Fecha o grupo do nome -->
+
+                <div class="form-group"> <!-- Agrupa o rótulo e o campo de entrada do preço -->
+                    <label for="preco">Preço (R$)</label> <!-- Rótulo descritivo para o preço -->
+                    <input type="number" id="preco" step="0.01" required placeholder="Ex: 25.00"> <!-- Campo numérico com casas decimais (step 0.01) obrigatório -->
+                </div> <!-- Fecha o grupo do preço -->
+
+                <div class="form-group"> <!-- Agrupa o rótulo e o campo de descrição -->
+                    <label for="descricao">Descrição</label> <!-- Rótulo descritivo para a descrição -->
+                    <textarea id="descricao" rows="3" required placeholder="Ingredientes e detalhes do prato..."></textarea> <!-- Caixa de texto multilinha obrigatória -->
+                </div> <!-- Fecha o grupo da descrição -->
+
+                <div class="form-group"> <!-- Agrupa o rótulo e o campo de imagem -->
+                    <label for="imagem">URL da Imagem</label> <!-- Rótulo descritivo para o link da foto -->
+                    <input type="url" id="imagem" required placeholder="https://exemplo.com/imagem.jpg"> <!-- Campo do tipo URL obrigatório para receber o link da foto -->
+                </div> <!-- Fecha o grupo da imagem -->
+
+                <button type="submit" class="card-btn">Salvar Produto</button> <!-- Botão que dispara o evento de envio (submit) do formulário -->
+            </form> <!-- Fecha o formulário -->
+        </section> <!-- Fecha a seção do formulário -->
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #ddd;"> <!-- Linha divisória visual entre o formulário e o cardápio -->
+
+        <!-- Container do Cardápio -->
+        <section id="menu-container" class="menu-grid"></section> <!-- Container vazio onde o TypeScript vai injetar os cards dos produtos dinamicamente -->
+    </main> <!-- Fecha o conteúdo principal -->
+
+    <script src="app.js"></script> <!-- Importa o arquivo JavaScript final gerado após a compilação do TypeScript -->
+</body> <!-- Fecha o corpo da página -->
+</html> <!-- Fecha o documento HTML -->

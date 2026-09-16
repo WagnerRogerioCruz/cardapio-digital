@@ -1,0 +1,148 @@
+* {
+    margin: 0; /* Remove a margem padrão de todos os elementos da página */
+    padding: 0; /* Remove o espaçamento interno (padding) padrão de todos os elementos */
+    box-sizing: border-box; /* Garante que bordas e preenchimentos não alterem o tamanho total calculado dos elementos */
+    font-family: Arial, sans-serif; /* Define a fonte padrão como Arial para toda a aplicação */
+}
+
+body {
+    background-color: #f8f9fa; /* Define uma cor de fundo cinza bem clara para a página */
+    color: #333; /* Define a cor padrão do texto principal como cinza escuro */
+    padding: 20px; /* Adiciona um respiro (espaçamento interno) ao redor de toda a página */
+}
+
+header {
+    text-align: center; /* Centraliza o texto do cabeçalho */
+    margin-bottom: 30px; /* Adiciona espaço abaixo do cabeçalho */
+}
+
+header h1 {
+    font-size: 2.5rem; /* Define um tamanho de fonte grande para o título principal */
+    color: #e63946; /* Define a cor vermelha em destaque para o título */
+    margin-bottom: 10px; /* Adiciona um pequeno espaço abaixo do título */
+}
+
+header p {
+    color: #666; /* Define uma cor cinza média para o subtítulo descritivo */
+}
+
+/* Estilos do Formulário */
+.form-section {
+    background: #fff; /* Define o fundo branco para o bloco do formulário */
+    padding: 25px; /* Adiciona espaço interno dentro da caixa do formulário */
+    border-radius: 8px; /* Arredonda as bordas da caixa do formulário */
+    max-width: 600px; /* Define uma largura máxima para o formulário não ficar muito largo */
+    margin: 0 auto; /* Centraliza o bloco do formulário horizontalmente na tela */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao redor do formulário */
+}
+
+.form-section h2 {
+    margin-bottom: 20px; /* Adiciona espaço abaixo do título do formulário */
+    color: #1d3557; /* Define a cor azul escura para o título do formulário */
+    font-size: 1.5rem; /* Define o tamanho da fonte do título do formulário */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Adiciona espaço entre os campos de entrada */
+    display: flex; /* Transforma o grupo em um layout flexível */
+    flex-direction: column; /* Organiza os elementos internos (label e input) em coluna (um abaixo do outro) */
+}
+
+.form-group label {
+    font-weight: bold; /* Deixa o texto do rótulo em negrito */
+    margin-bottom: 5px; /* Adiciona espaço entre o rótulo e o campo de texto */
+    color: #333; /* Define a cor do texto do rótulo */
+    font-size: 0.9rem; /* Define o tamanho da fonte do rótulo ligeiramente menor */
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px; /* Adiciona espaço interno dentro das caixas de digitação */
+    border: 1px solid #ccc; /* Define uma borda cinza clara ao redor dos inputs */
+    border-radius: 4px; /* Arredonda levemente as bordas dos inputs */
+    font-size: 1rem; /* Define o tamanho da fonte digitada dentro dos campos */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none; /* Remove a borda de foco padrão do navegador */
+    border-color: #e63946; /* Altera a cor da borda para vermelho quando o campo está selecionado */
+}
+
+/* Estilos do Grid e Cards */
+.menu-grid {
+    display: grid; /* Ativa o layout em grade (Grid Layout) para os produtos */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Cria colunas responsivas automáticas com largura mínima de 280px */
+    gap: 20px; /* Define o espaçamento entre os cards da grade */
+    max-width: 1200px; /* Define a largura máxima permitida para a grade do cardápio */
+    margin: 0 auto; /* Centraliza a grade horizontalmente na página */
+}
+
+.card {
+    background: #fff; /* Define o fundo branco para cada card individual de produto */
+    border-radius: 8px; /* Arredonda as bordas do card */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse as bordas arredondadas (como a imagem) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil para dar efeito de profundidade ao card */
+    display: flex; /* Transforma o card em flexbox para organizar seu conteúdo interno */
+    flex-direction: column; /* Organiza o conteúdo do card em coluna */
+    transition: transform 0.2s; /* Define uma animação suave de transição para o efeito de foco */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Move o card levemente para cima quando o mouse passa por cima */
+}
+
+.card-img {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do card */
+    height: 180px; /* Define uma altura fixa padrão para todas as imagens dos cards */
+    object-fit: cover; /* Faz a imagem se ajustar perfeitamente ao espaço sem distorcer as proporções */
+}
+
+.card-content {
+    padding: 15px; /* Adiciona espaçamento interno para os textos do card */
+    display: flex; /* Ativa o flexbox no conteúdo interno */
+    flex-direction: column; /* Organiza os textos e o rodapé em coluna */
+    flex-grow: 1; /* Faz o conteúdo ocupar todo o espaço vertical restante do card */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Define o tamanho da fonte do título do produto */
+    margin-bottom: 10px; /* Adiciona espaço abaixo do título do produto */
+    color: #1d3557; /* Define a cor azul escura para o nome do prato */
+}
+
+.card-description {
+    font-size: 0.9rem; /* Define o tamanho da fonte da descrição do prato */
+    color: #555; /* Define uma cor cinza para o texto descritivo */
+    margin-bottom: 15px; /* Adiciona espaço abaixo da descrição */
+    flex-grow: 1; /* Faz a descrição ocupar o espaço disponível para alinhar os rodapés dos cards */
+}
+
+.card-footer {
+    display: flex; /* Transforma o rodapé do card em flexbox */
+    justify-content: space-between; /* Espalha os itens (preço de um lado, botão do outro) nas extremidades */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+}
+
+.card-price {
+    font-size: 1.1rem; /* Define o tamanho da fonte do preço */
+    font-weight: bold; /* Deixa o preço em negrito */
+    color: #2a9d8f; /* Define a cor verde para destacar o preço */
+}
+
+.card-btn {
+    background-color: #e63946; /* Define a cor de fundo vermelha para o botão */
+    color: white; /* Define a cor do texto do botão como branca */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 10px 15px; /* Adiciona espaçamento interno (padding) ao botão */
+    border-radius: 4px; /* Arredonda as bordas do botão */
+    cursor: pointer; /* Muda o cursor do mouse para o formato de clique (pointer) */
+    font-weight: bold; /* Deixa o texto do botão em negrito */
+    width: 100%; /* Faz o botão do formulário ocupar 100% da largura */
+    font-size: 1rem; /* Define o tamanho da fonte do texto do botão */
+    transition: background 0.2s; /* Adiciona uma transição suave ao mudar de cor no hover */
+}
+
+.card-btn:hover {
+    background-color: #d90429; /* Escurece um pouco a cor vermelha do botão quando o mouse passa por cima */
+}
