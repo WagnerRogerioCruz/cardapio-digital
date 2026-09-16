@@ -63,7 +63,7 @@ class Cardapio {
         else { // Caso não haja nada salvo, cria produtos iniciais padrão
             this.produtos.push(new Produto(1, "Hambúrguer Artesanal", "Pão brioche, carne 180g, queijo cheddar derretido e molho especial.", 35.90, "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80"));
             this.produtos.push(new Produto(2, "Pizza Margherita", "Molho de tomate artesanal, muçarela de búfala, manjericão fresco e azeite.", 48.00, "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=500&q=80"));
-            this.adicionarProduto(new Produto(3, "Salada Caesar", "Alface-romana, croutons crocantes, queijo parmesão e molho caesar exclusivo.", 24.50, "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=500&q=80"));
+            this.produtos.push(new Produto(3, "Salada Caesar", "Alface-romana, croutons crocantes, queijo parmesão e molho caesar exclusivo.", 24.50, "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=500&q=80"));
             this.salvarNoStorage(); // Salva esses produtos iniciais no LocalStorage
         }
     }

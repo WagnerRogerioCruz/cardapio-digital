@@ -67,7 +67,7 @@ class Cardapio { // Declara a classe 'Cardapio' para gerenciar a lista de produt
                 48.00,
                 "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=500&q=80"
             ));
-            this.adicionarProduto(new Produto(
+            this.produtos.push(new Produto(
                 3,
                 "Salada Caesar",
                 "Alface-romana, croutons crocantes, queijo parmesão e molho caesar exclusivo.",
