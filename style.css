@@ -1,8 +1,11 @@
+/* ==========================================================================
+   RESET E ESTILOS GERAIS
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -24,14 +27,23 @@ header h1 {
 
 header p {
     color: #666;
+    font-size: 1rem;
 }
 
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   PAINEL ADMINISTRATIVO: FORMULÁRIO DE CADASTRO
+   ========================================================================== */
 .form-section {
-    background: #fff;
+    background: #ffffff;
     padding: 25px;
     border-radius: 8px;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 25px auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -55,39 +67,142 @@ header p {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #e63946;
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #1d3557;
 }
 
+/* ==========================================================================
+   PAINEL DE COMANDA E FATURAMENTO (ADMIN/VENDAS)
+   ========================================================================== */
+.admin-section {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admin-section h2 {
+    color: #1d3557;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+#itens-venda {
+    list-style: none;
+    padding-left: 0;
+}
+
+#itens-venda li {
+    background-color: #f1f3f5;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   BOTÕES GERAIS E DE AÇÃO
+   ========================================================================== */
+.card-btn {
+    background-color: #1d3557;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.card-btn:hover {
+    background-color: #152741;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.add-venda-btn {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+.add-venda-btn:hover {
+    background-color: #218377;
+}
+
+.delete-cardapio-btn {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+.delete-cardapio-btn:hover {
+    background-color: #c92a37;
+}
+
+.remove-item-comanda-btn {
+    background: none;
+    border: none;
+    color: #e63946;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.remove-item-comanda-btn:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   GRID DO CARDÁPIO E CARDS DE PRODUTOS
+   ========================================================================== */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin-top: 20px;
 }
 
 .card {
-    background: #fff;
+    background: #ffffff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
 }
 
 .card-img {
@@ -120,27 +235,11 @@ header p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto;
 }
 
 .card-price {
     font-size: 1.1rem;
     font-weight: bold;
     color: #2a9d8f;
-}
-
-.remove-btn {
-    background-color: #e63946;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    width: 100%;
-    font-size: 1rem;
-    transition: background 0.2s;
-}
-
-.remove-btn:hover {
-    background-color: #d90429;
 }

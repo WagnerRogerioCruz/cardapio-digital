@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio Digital</title>
+    <title>Cardápio Digital - Sprint 2</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Nosso Cardápio</h1>
-        <p>Cadastre novos pratos e gerencie seu menu digital.</p>
+        <p>Cadastre novos pratos, gerencie o menu e registre vendas.</p>
     </header>
 
     <main>
+        <!-- PAINEL ADMINISTRATIVO: CADASTRO -->
         <section class="form-section">
-            <h2>Cadastrar Novo Prato</h2>
+            <h2>Cadastrar Novo Produto</h2>
             <form id="product-form">
                 <div class="form-group">
                     <label for="nome">Nome do Produto</label>
@@ -22,13 +23,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="preco">Preço (R$)</label>
+                    <label for="preco">Preço Base (R$)</label>
                     <input type="number" id="preco" step="0.01" required placeholder="Ex: 25.00">
                 </div>
 
                 <div class="form-group">
                     <label for="descricao">Descrição</label>
-                    <textarea id="descricao" rows="3" required placeholder="Ingredientes e detalhes do prato..."></textarea>
+                    <textarea id="descricao" rows="2" required placeholder="Ingredientes..."></textarea>
                 </div>
 
                 <div class="form-group">
@@ -36,12 +37,33 @@
                     <input type="url" id="imagem" required placeholder="https://exemplo.com/imagem.jpg">
                 </div>
 
-                <button type="submit" class="card-btn">Salvar Produto</button>
+                <div class="form-group">
+                    <label for="tipo-produto">Tipo do Produto</label>
+                    <select id="tipo-produto" required>
+                        <option value="prato">Prato (+ R$ 5,00 taxa preparo)</option>
+                        <option value="lanche">Lanche (+ R$ 2,00 taxa preparo)</option>
+                        <option value="bebida">Bebida (+ 10% imposto)</option>
+                    </select>
+                </div>
+                <button type="submit" class="card-btn">Salvar no Cardápio</button>
             </form>
         </section>
 
-        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #ddd;">
+        <!-- PAINEL DE COMANDA E FATURAMENTO -->
+        <section class="admin-section" style="max-width: 600px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <h2>Comanda / Venda Atual</h2>
+            <p><strong>Itens Selecionados:</strong></p>
+            <ul id="itens-venda" style="margin: 10px 0 15px 20px;"></ul>
+            <p><strong>Total da Venda:</strong> R$ <span id="total-venda">0.00</span></p>
+            <button id="btn-finalizar-venda" class="card-btn" style="background: #2a9d8f; margin-top: 10px;">Finalizar Comanda</button>
+            
+            <hr style="margin: 20px 0;">
+            <p><strong>Faturamento Total Acumulado:</strong> R$ <span id="faturamento-total">0.00</span></p>
+        </section>
 
+        <h2 style="text-align: center; margin: 30px 0 15px 0; color: #1d3557;">Cardápio</h2>
+
+        <!-- LISTA DO CARDÁPIO -->
         <section id="menu-container" class="menu-grid"></section>
     </main>
 
