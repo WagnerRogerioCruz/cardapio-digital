@@ -32,6 +32,9 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // garantir que o valor inicial do faturamento seja exibido na tela logo quando a página carregar -  CARREGAR O FATURAMENTO SALVO NA TELA AO ABRIR/RECARREGAR A PÁGINA
+    atualizarTelaVendas();
+
     // DELEGAÇÃO DE EVENTOS NO CARDÁPIO (Ações dos Cards)
     document.getElementById("menu-container")?.addEventListener("click", (e) => {
         const target = e.target as HTMLElement;

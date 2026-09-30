@@ -1,11 +1,29 @@
 import { Produto } from "./Produto.js";
 
-// --- 4. CLASSE VENDA (COM REMOÇÃO DE ITEM DA COMANDA) ---
+// --- CLASSE VENDA ---
 
 export class Venda {
     private readonly produtos: Produto[] = [];
     private fechada: boolean = false;
-    static faturamentoTotal: number = 0;
+    
+    // Inicializa carregando o valor salvo do localStorage (ou 0 se não houver nada)
+    private static faturamentoTotalAcumulado: number = Venda.carregarFaturamento();
+
+    // Getter estático para obter o faturamento
+    static get faturamentoTotal(): number {
+        return Venda.faturamentoTotalAcumulado;
+    }
+
+    // Lê o faturamento acumulado do localStorage
+    private static carregarFaturamento(): number {
+        const salvos = localStorage.getItem("faturamento_total");
+        return salvos ? parseFloat(salvos) : 0;
+    }
+
+    // Salva o faturamento acumulado no localStorage
+    private static salvarFaturamento(): void {
+        localStorage.setItem("faturamento_total", Venda.faturamentoTotalAcumulado.toString());
+    }
 
     adicionar(produto: Produto): void {
         if (!this.fechada) {
@@ -13,7 +31,6 @@ export class Venda {
         }
     }
 
-    // Permite remover um item da comanda caso o cliente mude de ideia
     removerItem(index: number): void {
         if (!this.fechada && index >= 0 && index < this.produtos.length) {
             this.produtos.splice(index, 1);
@@ -30,7 +47,8 @@ export class Venda {
 
     finalizar(): void {
         if (!this.fechada && this.produtos.length > 0) {
-            Venda.faturamentoTotal += this.total;
+            Venda.faturamentoTotalAcumulado += this.total;
+            Venda.salvarFaturamento(); // <-- Salva no localStorage ao finalizar a venda
             this.fechada = true;
         }
     }
