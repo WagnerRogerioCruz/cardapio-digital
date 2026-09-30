@@ -5,6 +5,7 @@ import { Prato, Bebida, Lanche } from "./models/Especializacoes.js";
 
 // --- 6. INTEGRAÇÃO E EVENTOS DA TELA ---
 window.addEventListener("DOMContentLoaded", () => {
+    
     const cardapio = new Cardapio();
     cardapio.renderizar();
 

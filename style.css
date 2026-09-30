@@ -35,6 +35,15 @@ main {
     margin: 0 auto;
 }
 
+/* Rodapé */
+footer {
+    background: #004080;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
 /* ==========================================================================
    PAINEL ADMINISTRATIVO: FORMULÁRIO DE CADASTRO
    ========================================================================== */

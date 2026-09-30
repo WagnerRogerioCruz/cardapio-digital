@@ -6,8 +6,8 @@
 
 ## 👥 Desenvolvedores & Autores
 * **Wagner Rogerio Cruz**
-* **Harley Hatgers**
-* **Kazuriho**
+* **Alvaro Harley Hartgers Lemos**
+* **Kazuhiro Monteiro Tano**
 
 ---
 
